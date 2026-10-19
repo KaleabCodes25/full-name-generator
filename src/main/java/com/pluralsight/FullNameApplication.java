@@ -14,10 +14,10 @@ public class FullNameApplication {
         String suffix = getSuffix(input).trim();
 
         String fullName = firstName;
-        if(middleName.isEmpty()) {
-            fullName += " " + middleName;}
+        if(!middleName.isEmpty()) {
+            fullName += " " + middleName + ".";}
 
-        fullName = fullName + " " + lastName;
+        fullName += " " + lastName;
 
         if(!suffix.isEmpty()) {
             fullName += ", " + suffix;
@@ -47,8 +47,5 @@ public class FullNameApplication {
         String suff = input.nextLine();
         return suff;
     }
-
-
-
 
 }
