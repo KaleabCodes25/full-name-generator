@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class FullNameApplication {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+
         String firstName = firstName(input).trim();
 
         String middleName = middleName(input).trim();
@@ -14,14 +15,13 @@ public class FullNameApplication {
         String suffix = getSuffix(input).trim();
 
         String fullName = firstName;
-        if(!middleName.isEmpty()) {
-            fullName += " " + middleName + ".";}
+
+        fullName += !middleName.isEmpty() ? " " + middleName + "." : "";
 
         fullName += " " + lastName;
 
-        if(!suffix.isEmpty()) {
-            fullName += ", " + suffix;
-        }
+        fullName += !suffix.isEmpty() ? ", " + suffix : "";
+
         System.out.println(fullName);
 
     }
